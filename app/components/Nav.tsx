@@ -16,12 +16,12 @@ export default function Nav({ user }: Session) {
                 <h1>Home</h1>
             </Link>
             
-            <ul className='flex items-center gap-12'>
+            <ul onClick={() => cartStore.toggleCart()} className='flex items-center gap-12'>
                 <li className='flex items-center text-3xl relative cursor-pointer'>
-                <AiFillShopping />
-                <span className='bg-teal-500 text-white text-sm font-bold  px-1 py-1 w-5 h-5 rounded-full absolute -top-2 -right-2 flex items-center justify-center'>
-                    {cartStore.cart.length}
-                </span>
+                    <AiFillShopping />
+                    <span className='bg-teal-500 text-white text-sm font-bold  px-1 py-1 w-5 h-5 rounded-full absolute -top-2 -right-2 flex items-center justify-center'>
+                        {cartStore.cart.length}
+                    </span>
                 </li>
                 {!user && (
                     <li className='bg-teal-500 text-white px-2 py-1 rounded-md'>
@@ -31,12 +31,12 @@ export default function Nav({ user }: Session) {
                 )}
                 {user && (
                     <>
-                        <li >
+                        <li className='w-auto h-auto'>
                             <Image
                                 src={user?.image as string}
                                 width={50} height={50}
                                 alt="user avatar"
-                                className='rounded-full w-auto h-auto'
+                                className='rounded-full '
                             />
                         </li>
                     </>

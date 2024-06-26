@@ -1,6 +1,7 @@
 import formatPrice from "@/util/PriceFormat";
 import Image from "next/image";
 // import React from "react";
+import AddCart from "./AddCart";
 interface SearchParams {
   image: string;
   name: string;
@@ -30,9 +31,7 @@ export default async function ProductPage({
             {searchParams.price && formatPrice(searchParams.price)}
           </p>
         </div>
-        <button className="my-12 text-black py-2 px-6 font-medium rounded-md outline">
-          Add to cart
-        </button>
+        <AddCart {...searchParams} />
       </div>
     </div>
   );
