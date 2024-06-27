@@ -19,9 +19,9 @@ export default function Cart() {
       >
         <h1>Cart:</h1>
         {cartStore.cart.map((item) => (
-          <div className="flex justify-around py-4 gap-4">
+          <div className="flex justify-around py-4 gap-4" key={item.id}>
             <Image
-              src={item.image}
+              src={item.image as string}
               width={200}
               height={200}
               alt={item.name}
